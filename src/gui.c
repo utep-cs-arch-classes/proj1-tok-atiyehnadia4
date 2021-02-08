@@ -1,7 +1,7 @@
 #include <stdio.h>
 
 void main()
-  char count;
+char count;
 char b;
 int char[100];
 int i;
