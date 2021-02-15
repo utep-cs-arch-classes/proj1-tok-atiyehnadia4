@@ -1,16 +1,18 @@
 #include <stdio.h>
 
-void main()
-  char count;
-  int char[100];
+void userInputGUI(){
+  char userInput[100];
   int i;
-
-  printf("Input a string");
-  count = 0;
-  i = 0;
-  while(count != '\n'){
-    count = getchar();
-    char[i] = count
+  char inputChar;
+  printf("Please input a string\n");
+  while(inputChar != '\n'){
+    inputChar = getchar();
+    userInput[i] = inputChar;
     i = i+1;
   }
-  printf("%c " ,char[0])
+  printf("%s\n", userInput);
+}
+
+void main(){
+  userInputGUI();
+}
