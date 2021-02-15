@@ -16,14 +16,16 @@ void userInputGUI(){
 int space_char(char c){
   int count;
   count = 0;
-  if(c != '\n'){
+  if(c != '\n'|| c != '\t' || c != ' '){
     count = count + 1;
   }
   return count;
 }
 
 int non_space_char(char c){
-  return 0;
+  if(c == '\n'){
+  }
+    return 0;
 }
 
 
