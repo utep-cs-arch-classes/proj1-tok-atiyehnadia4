@@ -5,13 +5,26 @@
 /* Return true (non-zero) if c is a whitespace characer
    (' ', '\t', or '\n').
    Zero terminators are not printable (therefore false) */
-int space_char(char c);
+int space_char(char c){
+  int count;
+  count = 0;
+  if(c < 21){
+    count = count + 1;
+  }
+  return count;
+}
 
 /* Return true (non-zero) if c is a non-whitespace
    character (not space, tab, or newline).
    Zero terminators are not printable (therefore false) */
-int non_space_char(char c);
-
+int non_space_char(char c){
+  int count;
+  count = 0;
+  if(c > 20){
+    count = count + 1;
+  }
+  return count;
+}
 /* Returns a pointer to the first character of the next
    space-separated word in zero-terminated str.  Return a zero pointer if
    str does not contain any words.
