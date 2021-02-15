@@ -13,6 +13,23 @@ void userInputGUI(){
   printf("%s\n", userInput);
 }
 
+int space_char(char c){
+  int count;
+  count = 0;
+  if(c != '\n'){
+    count = count + 1;
+  }
+  return count;
+}
+
+int non_space_char(char c){
+  return 0;
+}
+
+
 void main(){
   userInputGUI();
+  char letter;
+  letter = 'n';
+  printf("%i\n" ,space_char(letter));
 }
