@@ -16,22 +16,28 @@ void userInputGUI(){
 int space_char(char c){
   int count;
   count = 0;
-  if(c != '\n'|| c != '\t' || c != ' '){
+  if(c < 21){
     count = count + 1;
   }
   return count;
 }
 
 int non_space_char(char c){
-  if(c == '\n'){
+  int count;
+  count = 0;
+  if(c > 20){
+    count = count + 1;
   }
-    return 0;
+  return count;
 }
 
 
 void main(){
   userInputGUI();
-  char letter;
-  letter = 'n';
-  printf("%i\n" ,space_char(letter));
+  char name[100] = "Nadia ";
+  int i;
+  for(i = 0; i < 7; i = i+1){
+    printf("%i\n", space_char(name[i]));
+    printf("%i\n", non_space_char(name[i]));
+  }
 }
