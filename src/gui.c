@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include "tokenizer.h"
 
 void userInputGUI(){
   char userInput[100];
