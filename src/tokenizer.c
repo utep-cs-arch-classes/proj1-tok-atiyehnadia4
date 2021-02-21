@@ -33,6 +33,21 @@ char *word_end(char *str){
     return  c + 1;
   }  
 }
-   
+
+
 int count_words(char *str){
+  int wordCount = 0;
+  int i;
+  for(i = 0; *(str+i) != '\0';i++){
+    char c = *(str+i);
+    if(space_char(c) && non_space_char(c+1)){
+      wordCount++;
+    }
+  }
+  if(i > 0){
+    wordCount ++;
+  }
+  return wordCount;
 }
+
+
