@@ -5,4 +5,4 @@ gui.o: gui.c tokenizer.h
 main: tokenizer.o gui.o
 	gcc -o test tokenizer.o gui.o
 clean:
-	rm -f test *o *~ *#
+	rm -f test *o *~ *# *.#
