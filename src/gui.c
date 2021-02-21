@@ -15,7 +15,7 @@ void userInputGUI(){
   userInput[i] = '\0';
   printf("\n%c\n", *word_start(userInput));
   printf("\n%c\n", *word_end(userInput));
-  
+  printf("\n%i\n", count_words(userInput));
 }
 
 
