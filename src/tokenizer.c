@@ -16,38 +16,36 @@ int non_space_char(char c){
 
 char *word_start(char *str){
   char *c = str;
-  while(space_char(*c)){
+  while(space_char(*c) && *c != '\0'){
     c++;
   }
-  if(*c != '\0'){
-    return c;
+  if(*c == '\0'){
+    return 0;
   }
+  return c;
 }
 
 char *word_end(char *str){
   char *c = str;
-  while(space_char(*c)){
+  while(non_space_char(*c) && *c != '\0'){
     c++;
   }
-  if(*c != '\0'){
-    return  c + 1;
-  }  
+  if(*c == '\0'){
+    return 0;
+  }
+  return c;
 }
 
 
 int count_words(char *str){
-  int wordCount = 0;
-  int i;
-  for(i = 0; *(str+i) != '\0';i++){
-    char c = *(str+i);
-    if(space_char(c) && non_space_char(c+1)){
-      wordCount++;
-    }
+  char *c = str;
+  if(word_start(str) == 0){
+    return 0;
   }
-  if(i > 0){
-    wordCount ++;
+  if(word_end(word_start(str))== 0){
+    return 1;
   }
-  return wordCount;
+  return count_words(word_end(word_start(str)))+1;
 }
 
 
