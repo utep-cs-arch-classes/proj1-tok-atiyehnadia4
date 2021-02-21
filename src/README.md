@@ -37,7 +37,7 @@ the user, as well as the temporary test cases. The main holds a single call to
 userInputGUI.
 
 
-##MakeFile
+## MakeFile
 
 The make file holds 4 major functions, tokenizer.o, gui.o, main, and clean.
 
@@ -50,4 +50,3 @@ The make file holds 4 major functions, tokenizer.o, gui.o, main, and clean.
 -clean: is responsible for cleaning the directory of unwanted files.
 
 All methods can be called with command "make <function_name>".
-
