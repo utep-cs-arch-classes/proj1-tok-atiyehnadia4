@@ -47,7 +47,7 @@ int count_words(char *str){
 }
 
 char *copy_str(char *inStr, short len){
-  char * new_src = (char *)malloc(len);
+  char * new_src = (char *)malloc(sizeof(char)*len+1);
   int i;
 
   for(i = 0; i < len; i++){
@@ -61,7 +61,7 @@ char *copy_str(char *inStr, short len){
 char **tokenize(char* str){
   int i;
   int num_words = count_words(str);
-  char **tokens = (char **)malloc(num_words);
+  char **tokens = (char **)malloc(sizeof(char*)*(num_words+1));
 
   char *start = str;
   char *end = str;
@@ -71,7 +71,6 @@ char **tokenize(char* str){
     end = word_end(start);
     tokens[i]= copy_str(start, end-start);
   }
-
   tokens[i] = '\0';
   return tokens;
 }
@@ -85,13 +84,19 @@ void print_tokens(char **tokens){
     i++;
   }
   printf("\ntokens[%i] ='%s'",i, tokens[i]);
+  printf("\n");
+  free_tokens(tokens);
 }
 
 void free_tokens(char **tokens){
   int i = 0;
   while(tokens[i] != 0){
     free(tokens[i]);
+    printf("\ntokens[%i] = '%s'", i, tokens[i]);
+    i++;
   }
   free(tokens[i]);
+  printf("\ntokens[%i] = '%s'", i, tokens[i]);
   free(tokens);
+  printf("\n%s\n", tokens);
 }
