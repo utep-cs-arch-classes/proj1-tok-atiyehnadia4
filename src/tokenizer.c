@@ -85,7 +85,6 @@ void print_tokens(char **tokens){
   }
   printf("\ntokens[%i] ='%s'",i, tokens[i]);
   printf("\n");
-  free_tokens(tokens);
 }
 
 void free_tokens(char **tokens){
@@ -98,5 +97,4 @@ void free_tokens(char **tokens){
   free(tokens[i]);
   printf("\ntokens[%i] = '%s'", i, tokens[i]);
   free(tokens);
-  printf("\n%s\n", tokens);
 }
