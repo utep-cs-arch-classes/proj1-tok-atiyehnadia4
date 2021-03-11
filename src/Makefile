@@ -2,13 +2,9 @@ tokenizer.o: tokenizer.c tokenizer.h
 	gcc -c tokenizer.c
 gui.o: gui.c tokenizer.h
 	gcc -c gui.c
-test.o: tester.c
-	gcc -c tester.c
-
-test: test.o
-	gcc -o test tester.o
-
-main: tokenizer.o gui.o
-	gcc -o test tokenizer.o gui.o
+history.o: history.c history.h
+	gcc -c history.c
+main: tokenizer.o gui.o history.o
+	gcc -o test tokenizer.o gui.o history.o
 clean:
 	rm -f test *o *~ *# *.#
