@@ -57,7 +57,6 @@ char *copy_str(char *inStr, short len){
   return new_src;
   
 }
-
 char **tokenize(char* str){
   int i;
   int num_words = count_words(str);
@@ -91,10 +90,10 @@ void free_tokens(char **tokens){
   int i = 0;
   while(tokens[i] != 0){
     free(tokens[i]);
-    printf("\ntokens[%i] = '%s'", i, tokens[i]);
+    //printf("\ntokens[%i] = '%s'", i, tokens[i]);
     i++;
   }
   free(tokens[i]);
-  printf("\ntokens[%i] = '%s'", i, tokens[i]);
+  //printf("\ntokens[%i] = '%s'", i, tokens[i]);
   free(tokens);
 }
