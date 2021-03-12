@@ -26,6 +26,29 @@ it to the user.
 
 The five methods can be tested using a Make file and gui.c
 
+The next section of the tokenizer has 4 methods that complete the tokenizing
+function. These four are: copy_str, which copiesone string to another taking
+into consideration memory and space, tokenize, which seperates all the words
+in an input string into individual tokens, print_tokens which prints all the
+designated tokens for a tokenized string, and free_tokens which frees the
+allocated memory.
+
+The tokenizing method can be tested using a Make file and gui.c
+
+#history.c
+
+The history.c file contains 5 methods that aid the user in keeping track of
+what has been written in the tokenizer. The methods consist of init_history(),
+which instanciates a new instance of a linked list where the history will be
+stored, add_history, which iterates through the history and adds a new entry
+every time the user tokenizes a string, *get_history which gets the specific
+string at a certain key that the user specifies through the command !key,
+print_history, which prints the entire history that is stored in the linked
+list, and finally free_history, which frees all the allocated memory for the
+linked list so that the next iteration has a clean linked list.
+
+The tokenizing method can be tested using a Make file and gui.c
+
 ## gui.c
 
 The gui.c file takes in user input, displays it back to the user and is used
